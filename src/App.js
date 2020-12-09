@@ -2,9 +2,29 @@ import React, { useState } from "react";
 import "./styles.css";
 
 const topicDictionary = {
-  "JavaScript Basics": ["Lesson-1", "Lesson-2"],
-  "Cool JavaScript": ["JavaScript for LinkedIn"],
-  "Random Blogs": ["College Nostalgia", "Poetry"],
+  "JavaScript Basics": [
+    [
+      "Lesson-1",
+      "https://rashitamehta.hashnode.dev/basics-of-javascript-episode-1"
+    ],
+    [
+      "Lesson-2",
+      "https://rashitamehta.hashnode.dev/interacting-with-the-browser-using-javascript-basic-episode-2"
+    ]
+  ],
+  "Cool JavaScript": [
+    [
+      "JavaScript for LinkedIn",
+      "https://rashitamehta.hashnode.dev/accepting-linkedin-connection-requests-using-javascript"
+    ]
+  ],
+  "Random Blogs": [
+    [
+      "College Nostalgia",
+      "https://thecollegetimes.org/quarantine/2020-or-semester-exams-which-is-better/"
+    ],
+    ["My Poetry Blog", "https://leasuremoments.blogspot.com/"]
+  ],
   "": ""
 };
 const list = ["JavaScript Basics", "Cool JavaScript", "Random Blogs"];
@@ -25,7 +45,11 @@ export default function App() {
         return <button onClick={() => clickHandler(topic)}>{topic}</button>;
       })}
       {lis.map((blog) => {
-        return <div class="blog-name">{blog}</div>;
+        return (
+          <div class="blog-name">
+            <a href={blog[1]}>{blog[0]}</a>
+          </div>
+        );
       })}
     </div>
   );
