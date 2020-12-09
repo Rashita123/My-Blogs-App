@@ -27,6 +27,7 @@ const topicDictionary = {
   ],
   "": ""
 };
+
 const list = ["JavaScript Basics", "Cool JavaScript", "Random Blogs"];
 export default function App() {
   const [lis, setlist] = useState([]);
@@ -38,16 +39,19 @@ export default function App() {
   }
   return (
     <div className="App">
-      <h1>Check out my Blogs</h1>
+      <h1 style={{ color: "#8B5CF6" }}>Check out my Blogs</h1>
       <h2>Click on any niche to see my blogs</h2>
 
       {list.map((topic) => {
         return <button onClick={() => clickHandler(topic)}>{topic}</button>;
       })}
+      <hr></hr>
       {lis.map((blog) => {
         return (
           <div class="blog-name">
-            <a href={blog[1]}>{blog[0]}</a>
+            <a href={blog[1]} target="_blank">
+              {blog[0]}
+            </a>
           </div>
         );
       })}
