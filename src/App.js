@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 
 const topicDictionary = {
-  "JavaScript Basics": ["Leson-1", "Leson-2"],
+  "JavaScript Basics": ["Lesson-1", "Lesson-2"],
   "Cool JavaScript": ["JavaScript for LinkedIn"],
   "Random Blogs": ["College Nostalgia", "Poetry"],
   "": ""
@@ -24,11 +24,9 @@ export default function App() {
       {list.map((topic) => {
         return <button onClick={() => clickHandler(topic)}>{topic}</button>;
       })}
-      <ul>
-        {lis.map((blog) => {
-          return <li>{blog}</li>;
-        })}
-      </ul>
+      {lis.map((blog) => {
+        return <div class="blog-name">{blog}</div>;
+      })}
     </div>
   );
 }
